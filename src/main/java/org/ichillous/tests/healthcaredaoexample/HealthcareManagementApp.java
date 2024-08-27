@@ -24,11 +24,13 @@ public class HealthcareManagementApp {
         try{
             switch (choice) {
                 case 1:
-                    
+                    PatientDAO.managePatients(patientDAO, sc);
                     break;
                 case 2:
+                    DoctorDao.manageDoctors(doctorDAO, sc);
                     break;
                 case 3:
+                    AppointmentDAO.manageAppointments(appointmentDAO, sc);
                    break;
             }
         } finally {

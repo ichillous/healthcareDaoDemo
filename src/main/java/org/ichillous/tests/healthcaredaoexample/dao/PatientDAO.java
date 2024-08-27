@@ -90,13 +90,13 @@ public class PatientDAO {
         return patients;
     }
 
-    private static void managePatients(PatientDAO patientDAO, Scanner scan) throws SQLException {
+    public static void managePatients(PatientDAO patientDAO, Scanner scan) throws SQLException {
         patientDAO = new PatientDAO();
-        System.out.println("1. CREATE \n 2. READ \n 3. UPDATE \n 4. DELETE ");
+        System.out.println(" 1. CREATE \n 2. READ \n 3. UPDATE \n 4. DELETE ");
         Scanner sc = new Scanner(System.in);
 
         int choice = sc.nextInt();
-        scan.nextLine();
+        sc.nextLine();
         try {
             switch (choice) {
                 //Create
@@ -108,6 +108,8 @@ public class PatientDAO {
                     newPatient.setFirstName(sc.nextLine());
                     System.out.print("Enter last name: ");
                     newPatient.setLastName(sc.nextLine());
+                    System.out.print("Enter date of birth: ");
+                    newPatient.setDateOfBirth(sc.nextLine());
                     System.out.print("Enter phone number: ");
                     newPatient.setPhoneNumber(sc.nextLine());
                     patientDAO.createPatient(newPatient);

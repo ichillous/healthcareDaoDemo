@@ -94,13 +94,13 @@ public class DoctorDao {
         return doctors;
     }
 
-    private static void manageDoctors(DoctorDao doctorDao, Scanner scan) throws SQLException {
+    public static void manageDoctors(DoctorDao doctorDao, Scanner scan) throws SQLException {
         doctorDao = new DoctorDao();
         System.out.println("1. CREATE \n 2. READ \n 3. UPDATE \n 4. DELETE ");
         Scanner sc = new Scanner(System.in);
 
         int choice = sc.nextInt();
-        scan.nextLine();
+        sc.nextLine();
         try {
             switch (choice) {
                 //Create
